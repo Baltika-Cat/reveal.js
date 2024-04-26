@@ -16,8 +16,88 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section style="background-color: #191919">
+          <img src="assets/react_hooks_logo.png" alt="logo">
+        </section>
+				<section data-markdown>
+          ## What are hooks?
+
+          Hooks is a special functionality that allows you to take advantage of React class components in functional components
+        </section>
+				<section>
+          <h2>What are the advantages of hooks?</h2>
+          <ul>
+            <li class="fragment">Improved code composition</li>
+            <li class="fragment">Reuse of states and components</li>
+            <li class="fragment">Improved testing</li>
+            <li class="fragment">Efficiency</li>
+          </ul>
+        </section>
+				<section>
+          <h2>Comparing code using hooks and without using hooks</h2>
+          <div style="display: flex; justify-content: center; align-items: space-around">
+            <div class="fragment" style="display: flex; flex-direction: column;">
+              <p style="color: red">Without hooks</p>
+              <img src="assets/without-hooks.png" alt="without hooks">
+            </div>
+            <div class="fragment" style="display: flex; flex-direction: column;">
+              <p style="color: green">With hooks</p>
+              <img src="assets/with-hooks.png" alt="with hooks">
+            </div>
+          </div>
+        </section>
+				<section>
+          <h2>Types of hooks</h2>
+          <div style="display: flex; justify-content: space-around; align-items: space-around;">
+            <div style="display: flex; flex-direction: column">
+              <ul>
+                <li class="fragment"><p style="margin-bottom: 0">State hooks</p>
+                  <ul>
+                    <li style="font-size: 30px; color: #bbb">useState</li>
+                    <li style="font-size: 30px; color: #bbb">useReducer</li>
+                  </ul>
+                </li>
+                <li class="fragment"><p style="margin-bottom: 0">Context hooks</p>
+                  <ul>
+                    <li style="font-size: 30px; color: #bbb">useContext</li>
+                  </ul>
+                </li>
+                <li class="fragment"><p style="margin-bottom: 0">Ref hooks</p>
+                  <ul>
+                    <li style="font-size: 30px; color: #bbb">useRef</li>
+                    <li style="font-size: 30px; color: #bbb">useImperativeHandle</li>
+                  </ul>
+                </li>
+                <li class="fragment"><p style="margin-bottom: 0">Effect hooks</p>
+                  <ul>
+                    <li style="font-size: 30px; color: #bbb">useEffect</li>
+                    <li style="font-size: 30px; color: #bbb">useLayoutEffect</li>
+                    <li style="font-size: 30px; color: #bbb">useInsertionEffect</li>
+                </li>
+              </ul>
+            </div>
+            <div style="display: flex; flex-direction: column;">
+              <ul>
+                <li class="fragment"><p style="margin-bottom: 0">Performance hooks</p>
+                  <ul>
+                    <li style="font-size: 30px; color: #bbb">useMemo</li>
+                    <li style="font-size: 30px; color: #bbb">useCallback</li>
+                    <li style="font-size: 30px; color: #bbb">useTransition</li>
+                    <li style="font-size: 30px; color: #bbb">useDeferredValue</li>
+                  </ul>
+                </li>
+                <li class="fragment"><p style="margin-bottom: 0">Other hooks</p>
+                  <ul>
+                    <li style="font-size: 30px; color: #bbb">useDebugValue</li>
+                    <li style="font-size: 30px; color: #bbb">useId</li>
+                    <li style="font-size: 30px; color: #bbb">useSyncExternalStore</li>
+                    <li style="font-size: 30px; color: #bbb">useActionState</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
 			</div>
 		</div>
 
@@ -25,6 +105,7 @@
 		<script src="plugin/notes/notes.js"></script>
 		<script src="plugin/markdown/markdown.js"></script>
 		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/zoom/zoom.js"></script>
 		<script>
 			// More info about initialization & config:
 			// - https://revealjs.com/initialization/
@@ -33,7 +114,7 @@
 				hash: true,
 
 				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealZoom ]
 			});
 		</script>
 	</body>

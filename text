@@ -1,0 +1,60 @@
+slide 2: 
+
+What are React hooks? 
+
+To answer this question, we need to go a little bit from afar. 
+React has functional components that do not contain an internal state. 
+And there are also class components that add stateful logic to the program and allow you to use lifecycle methods.
+Hooks allow you to take advantage of class components in functional ones.
+
+slide 3
+
+WHAT ARE THE ADVANTAGES OF HOOKS?
+
+1. Improved code composition. 
+
+Thanks to hooks, lifecycle methods are written in a linear order of successive mappings, rather than being broken down into separate class components.
+
+2. Reuse of states and components. 
+
+Thanks to hooks, stateful logic is easily shared between different components. The same hook for calling states is used throughout the program, not just in the class.
+
+3. Improved testing. 
+
+Thanks to hooks, stateful logic is consolidated. So it's all defined in the appropriate hook and therefore easier to test.
+
+4. Efficiency. 
+
+When React Hooks are optimized, it is the fastest form of functional components.
+
+slide 4
+
+Now let's compare the simplest code using a class component and using hooks.
+
+As we can see, using hooks has made the code more concise and readable. There is also no need to use the render function.
+
+slide 5
+
+1. STATE HOOKS
+
+State lets a component “remember” information like user input. For example, a form component can use state to store the input value, while an image gallery component can use state to store the selected image index.
+
+2. CONTEXT HOOKS
+
+Context lets a component receive information from distant parents without passing it as props. For example, your app’s top-level component can pass the current UI theme to all components below, no matter how deep.
+
+3. REF HOOKS
+
+Refs let a component hold some information that isn’t used for rendering, like a DOM node or a timeout ID. Unlike with state, updating a ref does not re-render your component. Refs are an “escape hatch” from the React paradigm. They are useful when you need to work with non-React systems, such as the built-in browser APIs.
+
+4. EFFECT HOOKS
+
+Effects let a component connect to and synchronize with external systems. This includes dealing with network, browser DOM, animations, widgets written using a different UI library, and other non-React code.
+
+5. PERFORMANCE HOOKS
+
+A common way to optimize re-rendering performance is to skip unnecessary work. For example, you can tell React to reuse a cached calculation or to skip a re-render if the data has not changed since the previous render.
+
+6. OTHER HOOKS
+
+These Hooks are mostly useful to library authors and aren’t commonly used in the application code.
