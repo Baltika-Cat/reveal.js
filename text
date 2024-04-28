@@ -1,9 +1,12 @@
+slide 1:
+Hello! My name is Dmitry and today I'm going to tell you about react hooks.
+
 slide 2: 
 
 What are React hooks? 
 
 To answer this question, we need to go a little bit from afar. 
-React has functional components that do not contain an internal state. 
+React has functional components that don't contain an internal state. 
 And there are also class components that add stateful logic to the program and allow you to use lifecycle methods.
 Hooks allow you to take advantage of class components in functional ones.
 
@@ -39,22 +42,48 @@ slide 5
 
 State lets a component “remember” information like user input. For example, a form component can use state to store the input value, while an image gallery component can use state to store the selected image index.
 
-2. CONTEXT HOOKS
+2. PERFORMANCE HOOKS
 
-Context lets a component receive information from distant parents without passing it as props. For example, your app’s top-level component can pass the current UI theme to all components below, no matter how deep.
+A common way to optimize re-rendering performance is to skip unnecessary work. For example, you can tell React to reuse a cached calculation or to skip a re-render if the data has not changed since the previous render.
 
-3. REF HOOKS
-
-Refs let a component hold some information that isn’t used for rendering, like a DOM node or a timeout ID. Unlike with state, updating a ref does not re-render your component. Refs are an “escape hatch” from the React paradigm. They are useful when you need to work with non-React systems, such as the built-in browser APIs.
-
-4. EFFECT HOOKS
+3. EFFECT HOOKS
 
 Effects let a component connect to and synchronize with external systems. This includes dealing with network, browser DOM, animations, widgets written using a different UI library, and other non-React code.
 
-5. PERFORMANCE HOOKS
+4. CONTEXT HOOKS
 
-A common way to optimize re-rendering performance is to skip unnecessary work. For example, you can tell React to reuse a cached calculation or to skip a re-render if the data has not changed since the previous render.
+Context lets a component receive information from distant parents without passing it as props. For example, your app’s top-level component can pass the current UI theme to all components below, no matter how deep.
+
+5. REF HOOKS
+
+Refs let a component hold some information that isn’t used for rendering, like a DOM node or a timeout ID. Unlike with state, updating a ref does not re-render your component. Refs are an “escape hatch” from the React paradigm. They are useful when you need to work with non-React systems, such as the built-in browser APIs.
 
 6. OTHER HOOKS
 
 These Hooks are mostly useful to library authors and aren’t commonly used in the application code.
+
+Slide 7
+
+1. Instead, always use Hooks at the top level of your React function, before any early returns. By following this rule, you ensure that Hooks are called in the same order each time a component renders. That’s what allows React to correctly preserve the state of Hooks between multiple useState and useEffect calls
+
+2. By following this rule, you ensure that all stateful logic in a component is clearly visible from its source code.
+
+slide 8
+
+If hooks are called in the wrong context, they are meaningless. Consider a mechanism that ensures that hooks are called in the React scope
+
+The dispatcher is the shared object that contains the hook functions. It will be dynamically allocated or cleaned up based on the rendering phase of ReactDOM, and it will ensure that the user doesn’t access hooks outside a React component
+
+When we’re done performing the rendering work, we nullify the dispatcher and thus preventing hooks from being accidentally used outside ReactDOM’s rendering cycle. This is a mechanism that will ensure that the user doesn’t do silly things
+
+slide 9
+
+Each React component has its own fiber. This is a large object with many fields. In this case, we are interested in the memoizedState field, because this field stores current state
+
+slide 10
+
+Almost everything in react uses linked lists in terms of data structure, because Linked list are better in traversal, insertion and deletion operation which help virtual dom to manipulate states and components. And Hooks is no exception
+
+Each node in stores its state and references the next one.
+
+In this way, React manages each component without even revealing its instance.

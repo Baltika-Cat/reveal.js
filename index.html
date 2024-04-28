@@ -57,15 +57,12 @@
                     <li style="font-size: 30px; color: #bbb">useReducer</li>
                   </ul>
                 </li>
-                <li class="fragment"><p style="margin-bottom: 0">Context hooks</p>
+                <li class="fragment"><p style="margin-bottom: 0">Performance hooks</p>
                   <ul>
-                    <li style="font-size: 30px; color: #bbb">useContext</li>
-                  </ul>
-                </li>
-                <li class="fragment"><p style="margin-bottom: 0">Ref hooks</p>
-                  <ul>
-                    <li style="font-size: 30px; color: #bbb">useRef</li>
-                    <li style="font-size: 30px; color: #bbb">useImperativeHandle</li>
+                    <li style="font-size: 30px; color: #bbb">useMemo</li>
+                    <li style="font-size: 30px; color: #bbb">useCallback</li>
+                    <li style="font-size: 30px; color: #bbb">useTransition</li>
+                    <li style="font-size: 30px; color: #bbb">useDeferredValue</li>
                   </ul>
                 </li>
                 <li class="fragment"><p style="margin-bottom: 0">Effect hooks</p>
@@ -78,12 +75,15 @@
             </div>
             <div style="display: flex; flex-direction: column;">
               <ul>
-                <li class="fragment"><p style="margin-bottom: 0">Performance hooks</p>
+                <li class="fragment"><p style="margin-bottom: 0">Context hooks</p>
                   <ul>
-                    <li style="font-size: 30px; color: #bbb">useMemo</li>
-                    <li style="font-size: 30px; color: #bbb">useCallback</li>
-                    <li style="font-size: 30px; color: #bbb">useTransition</li>
-                    <li style="font-size: 30px; color: #bbb">useDeferredValue</li>
+                    <li style="font-size: 30px; color: #bbb">useContext</li>
+                  </ul>
+                </li>
+                <li class="fragment"><p style="margin-bottom: 0">Ref hooks</p>
+                  <ul>
+                    <li style="font-size: 30px; color: #bbb">useRef</li>
+                    <li style="font-size: 30px; color: #bbb">useImperativeHandle</li>
                   </ul>
                 </li>
                 <li class="fragment"><p style="margin-bottom: 0">Other hooks</p>
@@ -99,7 +99,33 @@
           </div>
         </section>
         <section>
+          <h3>Rules of hooks</h3>
+          <ul>
+            <li class="fragment">
+              Only Call Hooks at the Top Level
+            </li>
+            <li class="fragment">
+              Only Call Hooks from React Functions
+            </li>
+          </ul>
+        </section>
+        <section>
           <h2>What's happening under the hood?</h2>
+        </section>
+        <section>
+          <h2>Dispatcher</h2>
+          <img src="assets/Dispatcher.png" alt="Dispatcher">
+        </section>
+        <section>
+          <h3>Fiber structure</h3>
+          <img src="assets/fiber-structure.png" alt="fiber">
+        </section>
+        <section>
+          <h3>Linked list</h3>
+          <img src="assets/hooks-queue.png" alt="hooks-list">
+        </section>
+        <section>
+          <img src="assets/attention.png" alt="Thanks for your attention">
         </section>
 			</div>
 		</div>
